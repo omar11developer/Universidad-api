@@ -6,6 +6,7 @@ import com.omar.apiuniversidad.modelo.entidades.Persona;
 import com.omar.apiuniversidad.servicios.contratos.AlumnoDAO;
 import com.omar.apiuniversidad.servicios.contratos.CarreraDAO;
 import com.omar.apiuniversidad.servicios.contratos.PersonaDAO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,12 +17,13 @@ import java.util.Optional;
 public class AlumnoController extends PersonaController{
     private final CarreraDAO carreraDAO;
 
-
+    @Autowired
     public AlumnoController(@Qualifier("alumnoDAOImpl") PersonaDAO alumnoDao, CarreraDAO carreraDAO) {
         super(alumnoDao);
-        nombreEntidad="Alumno";
+        nombreEntidad = "Alumno";
         this.carreraDAO = carreraDAO;
     }
+
 
     @PutMapping("/{id}")
     public Persona actualizarAlumno(@PathVariable Integer id, @RequestBody Persona alumno){
