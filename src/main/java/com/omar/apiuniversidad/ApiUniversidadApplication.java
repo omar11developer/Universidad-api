@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ApiUniversidadApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ApiUniversidadApplication.class, args);
+        SpringApplication.run(ApiUniversidadApplication.class, args).getApplicationName();
     }
 
 }
