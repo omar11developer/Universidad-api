@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
-@Controller
-@RequestMapping("/Carrera")
+@RestController
+@RequestMapping("/carrera")
 public class CarreraController extends GenericoController<Carrera, CarreraDAO> {
     @Autowired
     public CarreraController(CarreraDAO service){
